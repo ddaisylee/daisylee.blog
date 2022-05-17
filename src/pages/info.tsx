@@ -2,6 +2,8 @@ import React, {FunctionComponent} from 'react';
 //graphql을 사용하기 위해 import합니다.
 import { graphql } from 'gatsby';
 import Text from 'components/Text';
+//Gatsby Link API를 이용하면 a 태그를 이용하는 것보다 성능적으로 우수합니다.
+import {Link} from 'gatsby';
 
 //(2) 응답 받은 결과에 대한 타입을 지정해줍니다.
 //data라는 키의 값으로 결과가 전달받는 것에 주의합니다.
@@ -30,6 +32,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function({
             <Text text={title} />
             <Text text={description} />
             <Text text={author} />
+            <Link to='/'>To Main</Link>
         </div>
     )
 }
