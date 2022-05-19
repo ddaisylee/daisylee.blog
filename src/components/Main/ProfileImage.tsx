@@ -9,7 +9,7 @@ const ProfileImageWrapper = styled.img`
     border-radius: 50%
 `
 
-const ProfileImage: FunctionComponent = function ProfileImage() {
+const ProfileImage: FunctionComponent = function() {
     return <ProfileImageWrapper src={PROFILE_IMAGE_LINK} alt="Profile Image" />
 }
 
