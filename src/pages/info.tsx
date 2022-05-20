@@ -1,8 +1,6 @@
 import React, {FunctionComponent} from 'react';
 //graphql을 사용하기 위해 import합니다.
 import { graphql } from 'gatsby';
-//Gatsby Link API를 이용하면 a 태그를 이용하는 것보다 성능적으로 우수합니다.
-// import {Link} from 'gatsby';
 // CSS 정의 및 글로벌 스타일을 지정하기 위해 컴포넌트의 함수를 불러옵니다.
 import {Global, css} from '@emotion/react';
 //CSS 정의가 아닌 Styled Component를 생성하기 위해 함수를 불러옵니다.
