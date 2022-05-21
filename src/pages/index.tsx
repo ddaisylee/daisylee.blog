@@ -4,11 +4,12 @@ import React, {FunctionComponent} from 'react';
 import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
 import Introduction from 'components/Main/Introduction';
+import Footer from 'components/Common/Footer';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100%
+    height: 100vh;
 `
 const IndexPage: FunctionComponent = function(){
     //Text 컴포넌트에 string 타입의 props를 넘겨주고 있습니다.
@@ -16,6 +17,7 @@ const IndexPage: FunctionComponent = function(){
         <Container>
             <GlobalStyle />
             <Introduction />
+            <Footer />
         </Container>
     )
 }
