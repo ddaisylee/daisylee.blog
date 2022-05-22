@@ -20,7 +20,6 @@ const Container = styled.div`
     height: 100vh;
 `
 const IndexPage: FunctionComponent = function(){
-    //Text 컴포넌트에 string 타입의 props를 넘겨주고 있습니다.
     return (
         <Container>
             <GlobalStyle />
