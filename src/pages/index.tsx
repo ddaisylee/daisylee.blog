@@ -5,6 +5,14 @@ import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
 import Introduction from 'components/Main/Introduction';
 import Footer from 'components/Common/Footer';
+import CategoryList from 'components/Main/CategoryList';
+
+//categoryList props에 전달할 더미 데이터 생성
+const CATEGORY_LIST = {
+    All: 5,
+    Web: 3,
+    Mobile: 2
+}
 
 const Container = styled.div`
     display: flex;
@@ -12,11 +20,11 @@ const Container = styled.div`
     height: 100vh;
 `
 const IndexPage: FunctionComponent = function(){
-    //Text 컴포넌트에 string 타입의 props를 넘겨주고 있습니다.
     return (
         <Container>
             <GlobalStyle />
             <Introduction />
+            <CategoryList selectedCategory='Web' categoryList={CATEGORY_LIST}/>
             <Footer />
         </Container>
     )
