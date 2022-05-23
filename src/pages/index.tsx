@@ -6,6 +6,8 @@ import GlobalStyle from 'components/Common/GlobalStyle';
 import Introduction from 'components/Main/Introduction';
 import Footer from 'components/Common/Footer';
 import CategoryList from 'components/Main/CategoryList';
+import PostList from 'components/Main/PostList';
+
 
 //categoryList props에 전달할 더미 데이터 생성
 const CATEGORY_LIST = {
@@ -25,6 +27,7 @@ const IndexPage: FunctionComponent = function(){
             <GlobalStyle />
             <Introduction />
             <CategoryList selectedCategory='Web' categoryList={CATEGORY_LIST}/>
+            <PostList />
             <Footer />
         </Container>
     )
