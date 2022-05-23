@@ -26,6 +26,7 @@ background-color: #ffffff;
 }
 `
 
+//추가 학습이 필요한 CSS 속성 또는 속성값: object-fit
 const ThumbnailImage = styled.img`
   width: 100%;
   height: 200px;
@@ -40,6 +41,9 @@ const PostItemContent = styled.div`
   padding: 15px;
 `
 
+//추가 학습이 필요한 CSS 속성 또는 속성값: -webkit-box, text-overflow,
+//white-space, overflow-wrap, -webkit-line-clamp,
+//-webkit-box-orient
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
@@ -76,6 +80,7 @@ const CategoryItem = styled.div`
   color: white;
 `
 
+//추가 학습이 필요한 CSS 속성 또는 속성값: Title 컴포넌트와 동일
 const Summary = styled.div`
   display: -webkit-box;
   overflow: hidden;
