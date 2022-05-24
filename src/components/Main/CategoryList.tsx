@@ -46,6 +46,12 @@ const CategoryListWrapper = styled.div`
     flex-wrap: wrap;
     width: 768px;
     margin: 100px auto 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
 `
 
 //props로 받아온 값을 이용해 <Link> 컴포넌트를 생성합니다.
@@ -57,6 +63,10 @@ const CategoryItem = styled(({active, ...props}:GatsbyLinkProps)=>(
     font-size: 18px;
     font-weight: ${({active})=> active ? '800' : '400'};
     cursor: pointer;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+    } 
 
     &:last-of-type {
     margin-right: 0;
