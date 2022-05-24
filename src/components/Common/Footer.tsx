@@ -9,6 +9,10 @@ const FooterWrapper = styled.div`
     font-size: 0.75rem;
     text-align: center;
     line-height: 1.5;
+
+    @media(max-width: 768px){
+        font-size: 10px;
+    }
 `
 //line-height: 행간
 

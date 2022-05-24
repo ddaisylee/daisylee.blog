@@ -23,6 +23,12 @@ const PostListWrapper = styled.div`
   margin: 0 auto;
   padding: 50px 0;
   background-color: tomato;
+  
+  @media(max-width: 768px){
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 50px 20px;
+  }
 `
 
 const PostList: FunctionComponent = function () {
