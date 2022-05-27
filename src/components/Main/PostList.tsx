@@ -15,6 +15,27 @@ const POST_ITEM_DATA = {
   link: 'https://www.google.co.kr/',
 }
 
+//index.tsx에서 받아온 데이터 중에서 PostList에서 사용되는 데이터를 옮겼습니다.
+export type PostType = {
+  node: {
+    id: string
+    frontmatter: {
+      title: string
+      summary: string
+      date: string
+      categories: string[]
+      thumbnail: {
+        publicURL: string
+      }
+    }
+  }
+}
+
+//props의 타입 지정
+type PostListProps = {
+  posts: PostType[]
+}
+
 const PostListWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,7 +52,7 @@ const PostListWrapper = styled.div`
   }
 `
 
-const PostList: FunctionComponent = function () {
+const PostList: FunctionComponent<PostListProps> = function () {
   return (
   <PostListWrapper>
     <PostItem {...POST_ITEM_DATA}/>
