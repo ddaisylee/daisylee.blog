@@ -6,8 +6,9 @@ import GlobalStyle from 'components/Common/GlobalStyle';
 import Introduction from 'components/Main/Introduction';
 import Footer from 'components/Common/Footer';
 import CategoryList from 'components/Main/CategoryList';
-import PostList from 'components/Main/PostList';
-
+//PostList 컴포넌트로 옮긴 데이터를 불러옵니다.
+import PostList, {PostType} from 'components/Main/PostList';
+import { graphql } from 'gatsby';
 
 //categoryList props에 전달할 더미 데이터 생성
 const CATEGORY_LIST = {
@@ -21,16 +22,53 @@ const Container = styled.div`
     flex-direction: column;
     height: 100vh;
 `
-const IndexPage: FunctionComponent = function(){
+
+//쿼리로 받아온 데이터 타입을 지정합니다.
+type IndexPageProps = {
+    data: {
+      allMarkdownRemark: {
+        edges: PostType[]
+      }
+    }
+  }
+
+const IndexPage: FunctionComponent<IndexPageProps> = function({
+    data: {
+        allMarkdownRemark: { edges },
+    },
+}){
     return (
         <Container>
             <GlobalStyle />
             <Introduction />
             <CategoryList selectedCategory='Web' categoryList={CATEGORY_LIST}/>
-            <PostList />
+            <PostList posts={edges}/>
             <Footer />
         </Container>
     )
 }
 
 export default IndexPage;
+
+export const getPostList = graphql`
+  query getPostList {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            summary
+            date(formatString: "YYYY.MM.DD.")
+            categories
+            thumbnail {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+`
