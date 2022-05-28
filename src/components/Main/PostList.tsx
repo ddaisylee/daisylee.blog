@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostItem from './PostItem'
-
+import {PostListItemType} from 'types/PostItem.types'
 
 //개별 PostItem 컴포넌트에 전달되는 props 더미 데이터
 // const POST_ITEM_DATA = {
@@ -15,26 +15,11 @@ import PostItem from './PostItem'
 //   link: 'https://www.google.co.kr/',
 // }
 
-//index.tsx에서 받아온 데이터 중에서 PostList에서 사용되는 데이터를 옮겼습니다.
-export type PostType = {
-  node: {
-    id: string
-    frontmatter: {
-      title: string
-      summary: string
-      date: string
-      categories: string[]
-      thumbnail: {
-        publicURL: string
-      }
-    }
-  }
-}
 
 //props의 타입 지정
 type PostListProps = {
   //PostItem 컴포넌트에 props로 넘겨줄 배열
-  posts: PostType[]
+  posts: PostListItemType[]
 }
 
 const PostListWrapper = styled.div`
@@ -59,7 +44,7 @@ const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
     {posts.map(
       ({
       node: { id, frontmatter }
-    }: PostType) => (
+    }: PostListItemType) => (
       <PostItem {...frontmatter}
        link="https://www.google.co.kr" 
        key={id} 

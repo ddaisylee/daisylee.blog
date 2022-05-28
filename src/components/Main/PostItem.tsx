@@ -1,18 +1,10 @@
 import React, {FunctionComponent} from 'react';
 import styled from '@emotion/styled';
 import {Link} from 'gatsby';
+import {PostFrontmatterType} from 'types/PostItem.types'
 
 //PostItem이 받아오는 props: 제목, 날짜, 카테고리, 요약, 썸네일, 링크
-type PostItemProps = {
-    title: string
-    date: string
-    categories: string[]
-    summary: string
-    thumbnail: {
-      publicURL: string
-    }
-    link: string
-}
+type PostItemProps = PostFrontmatterType & {link: string}
 
 const PostItemWrapper = styled(Link)`
 display: flex;
