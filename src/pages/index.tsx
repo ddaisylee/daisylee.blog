@@ -7,7 +7,7 @@ import Introduction from 'components/Main/Introduction';
 import Footer from 'components/Common/Footer';
 import CategoryList from 'components/Main/CategoryList';
 //PostList 컴포넌트로 옮긴 데이터를 불러옵니다.
-import PostList, {PostType} from 'components/Main/PostList';
+import PostList, { PostType } from 'components/Main/PostList';
 import { graphql } from 'gatsby';
 
 //categoryList props에 전달할 더미 데이터 생성
