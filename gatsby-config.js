@@ -24,7 +24,16 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          quality: 100,
+          placeholder: 'blurred',
+        }
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
