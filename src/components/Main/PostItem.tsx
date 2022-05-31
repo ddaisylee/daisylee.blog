@@ -2,6 +2,8 @@ import React, {FunctionComponent} from 'react';
 import styled from '@emotion/styled';
 import {Link} from 'gatsby';
 import {PostFrontmatterType} from 'types/PostItem.types'
+import {GatsbyImage} from 'gatsby-plugin-image';
+
 
 //PostItem이 받아오는 props: 제목, 날짜, 카테고리, 요약, 썸네일, 링크
 type PostItemProps = PostFrontmatterType & {link: string}
@@ -21,7 +23,7 @@ background-color: #ffffff;
 `
 
 //추가 학습이 필요한 CSS 속성 또는 속성값: object-fit
-const ThumbnailImage = styled.img`
+const ThumbnailImage = styled(GatsbyImage)`
   width: 100%;
   height: 200px;
   border-radius: 10px 10px 0 0;
@@ -93,12 +95,12 @@ const PostItem:FunctionComponent<PostItemProps> = function({
     date,
     categories,
     summary,
-    thumbnail: {publicURL},
+    thumbnail: {childImageSharp: {gatsbyImageData}},
     link
 }){
     return(
     <PostItemWrapper to={link}>
-        <ThumbnailImage src={publicURL} alt="Post Item Image"/>
+        <ThumbnailImage image={gatsbyImageData} alt= "Post Item Image" />
         <PostItemContent>
             <Title>{title}</Title>
             <Date>{date}</Date>

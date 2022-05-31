@@ -1,6 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import styled from '@emotion/styled';
 import ProfileImage from 'components/Main/ProfileImage';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+
+type IntroductionProps = {
+    profileImage: IGatsbyImageData
+}
 
 //Background 스타일링을 위한 컴포넌트
 const Background = styled.div`
@@ -43,11 +48,13 @@ const Title = styled.div`
     }
 `
 
-const Introduction: FunctionComponent = function(){
+const Introduction: FunctionComponent<IntroductionProps> = function({
+    profileImage
+}){
     return(
         <Background>
             <Wrapper>
-                <ProfileImage />
+                <ProfileImage profileImage={profileImage}/>
                 <div>
                     <Subtitle>Nice to meet you!</Subtitle>
                     <Title>I'm Junior Frontend Developer Daisy.</Title>
