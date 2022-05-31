@@ -33,9 +33,9 @@ const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
       node: { id, frontmatter }
     }: PostListItemType) => (
       <PostItem {...frontmatter}
-       link="https://www.google.co.kr" 
-       key={id} 
-       />
+      link="https://www.google.co.kr" 
+      key={id} 
+      />
       )
     )}
   </PostListWrapper>
