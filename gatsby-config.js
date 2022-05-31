@@ -23,6 +23,13 @@ module.exports = {
         path: `${__dirname}/contents`, //마크다운 파일을 저장할 Path입니다.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
+      },
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
