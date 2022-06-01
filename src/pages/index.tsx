@@ -11,6 +11,7 @@ import PostList from 'components/Main/PostList';
 import { graphql } from 'gatsby';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
+import queryString, { ParsedQuery } from 'query-string';
 
 //categoryList props에 전달할 더미 데이터 생성
 const CATEGORY_LIST = {
@@ -27,6 +28,9 @@ const Container = styled.div`
 
 //쿼리로 받아온 데이터 타입을 지정합니다.
 type IndexPageProps = {
+  location: {
+    search: string
+  }
     data: {
       allMarkdownRemark: {
         edges: PostListItemType[]
@@ -40,6 +44,7 @@ type IndexPageProps = {
   }
 
 const IndexPage: FunctionComponent<IndexPageProps> = function({
+  location: {search},
     data: {
         allMarkdownRemark: { edges },
         file: {
@@ -47,11 +52,16 @@ const IndexPage: FunctionComponent<IndexPageProps> = function({
         }
     },
 }){
+  const parsed: ParsedQuery<string> = queryString.parse(search)
+  const selectedCategory : string = 
+    typeof parsed.category !== 'string' || !parsed.category
+      ? 'All'
+      : parsed.category
     return (
         <Container>
             <GlobalStyle />
             <Introduction profileImage={gatsbyImageData}/>
-            <CategoryList selectedCategory='Web' categoryList={CATEGORY_LIST}/>
+            <CategoryList selectedCategory={selectedCategory} categoryList={CATEGORY_LIST}/>
             <PostList posts={edges}/>
             <Footer />
         </Container>
