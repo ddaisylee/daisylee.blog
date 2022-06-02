@@ -3,6 +3,21 @@ import styled from '@emotion/styled'
 import PostItem from './PostItem'
 import {PostListItemType} from 'types/PostItem.types'
 
+export type PostType = {
+  node: {
+    id: string
+    frontmatter: {
+      title: string
+      summary: string
+      date: string
+      categories: string[]
+      thumbnail: {
+        publicURL: string
+      }
+    }
+  }
+}
+
 //props의 타입 지정
 type PostListProps = {
   //PostItem 컴포넌트에 props로 넘겨줄 배열
