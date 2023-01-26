@@ -1,6 +1,6 @@
 //TypeScript는 기본적으로 '변수: 타입'과 같이 변수와 함수의 타입을 정의해서 사용합니다.
 //FunctionComponent: 리액트에서 제공하는 함수형 컴포넌트를 위한 타입
-import React, {FunctionComponent, useMemo} from 'react';
+import React, { FunctionComponent, useMemo } from 'react';
 import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
 import Introduction from 'components/Main/Introduction';
@@ -15,77 +15,80 @@ import queryString, { ParsedQuery } from 'query-string';
 import { PostType } from 'components/Main/PostList';
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 //쿼리로 받아온 데이터 타입을 지정합니다.
 type IndexPageProps = {
   location: {
-    search: string
-  }
-    data: {
-      allMarkdownRemark: {
-        edges: PostListItemType[]
-      }
-      file: {
-        childImageSharp: {
-          gatsbyImageData: IGatsbyImageData
-        }
-      }
-    }
-  }
+    search: string;
+  };
+  data: {
+    allMarkdownRemark: {
+      edges: PostListItemType[];
+    };
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+    };
+  };
+};
 
-const IndexPage: FunctionComponent<IndexPageProps> = function({
-  location: {search},
-    data: {
-        allMarkdownRemark: { edges },
-        file: {
-          childImageSharp: {gatsbyImageData}
-        }
+const IndexPage: FunctionComponent<IndexPageProps> = function ({
+  location: { search },
+  data: {
+    allMarkdownRemark: { edges },
+    file: {
+      childImageSharp: { gatsbyImageData },
     },
+  },
 }) {
-  const parsed: ParsedQuery<string> = queryString.parse(search)
-  const selectedCategory : string = 
+  const parsed: ParsedQuery<string> = queryString.parse(search);
+  const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
-      : parsed.category
-      const categoryList = useMemo(
-        () =>
-          edges.reduce(
-            (
-              list: CategoryListProps['categoryList'],
-              {
-                node: {
-                  frontmatter: { categories },
-                },
-              }: PostType,
-            ) => {
-              categories.forEach(category => {
-                if (list[category] === undefined) list[category] = 1;
-                else list[category]++;
-              });
-    
-              list['All']++;
-    
-              return list;
+      : parsed.category;
+  const categoryList = useMemo(
+    () =>
+      edges.reduce(
+        (
+          list: CategoryListProps['categoryList'],
+          {
+            node: {
+              frontmatter: { categories },
             },
-            { All: 0 },
-          ),
-        [],
-      )
-    
-    return (
-        <Container>
-            <GlobalStyle />
-            <Introduction profileImage={gatsbyImageData}/>
-            <CategoryList selectedCategory={selectedCategory} categoryList={categoryList}/>
-            <PostList posts={edges}/>
-            <Footer />
-        </Container>
-    )
-}
+          }: PostType,
+        ) => {
+          categories.forEach(category => {
+            if (list[category] === undefined) list[category] = 1;
+            else list[category]++;
+          });
+
+          list['All']++;
+
+          return list;
+        },
+        { All: 0 },
+      ),
+    [],
+  );
+
+  return (
+    <Container>
+      <GlobalStyle />
+      <Introduction profileImage={gatsbyImageData} />
+      <CategoryList
+        selectedCategory={selectedCategory}
+        categoryList={categoryList}
+      />
+      <PostList posts={edges} />
+      <Footer />
+    </Container>
+  );
+};
 
 export default IndexPage;
 
@@ -117,4 +120,4 @@ export const getPostList = graphql`
       }
     }
   }
-`
+`;
