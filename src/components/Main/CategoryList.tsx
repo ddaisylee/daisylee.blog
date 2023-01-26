@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode} from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
@@ -16,16 +16,16 @@ import { Link } from 'gatsby';
 
 //CategoryItem에서 사용할 prop의 타입을 지정합니다.
 type CategoryItemProps = {
-    active: boolean;
-}
+  active: boolean;
+};
 
 //Link 컴포넌트에 전달해주는 props의 타입을 지정합니다.
 //&: 두 타입을 하나로 합치는 intersection 타입
 type GatsbyLinkProps = {
-    children: ReactNode,
-    className?: string,
-    to: string,
-} & CategoryItemProps
+  children: ReactNode;
+  className?: string;
+  to: string;
+} & CategoryItemProps;
 
 /*
 active prop을 분리한 이유는 크게 2가지가 있습니다.
@@ -35,62 +35,62 @@ active prop을 분리한 이유는 크게 2가지가 있습니다.
 
 //index.tsx에서 받아온 props값의 타입을 지정합니다.
 export type CategoryListProps = {
-    selectedCategory: string
-    categoryList: {
-        [key: string]: number
-    }
-}
+  selectedCategory: string;
+  categoryList: {
+    [key: string]: number;
+  };
+};
 
 const CategoryListWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    width: 768px;
-    margin: 100px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 768px;
+  margin: 100px auto 0;
 
-    @media (max-width: 768px) {
-        width: 100%;
-        margin-top: 50px;
-        padding: 0 20px;
-    }
-`
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`;
 
 //props로 받아온 값을 이용해 <Link> 컴포넌트를 생성합니다.
-const CategoryItem = styled(({active, ...props}:GatsbyLinkProps)=>(
-    <Link {...props} />
+const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
+  <Link {...props} />
 ))<CategoryItemProps>`
-    margin-right: 20px;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: ${({active})=> active ? '800' : '400'};
-    cursor: pointer;
+  margin-right: 20px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: ${({ active }) => (active ? '800' : '400')};
+  cursor: pointer;
 
-    @media (max-width: 768px) {
-        font-size: 15px;
-    } 
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 
-    &:last-of-type {
+  &:last-of-type {
     margin-right: 0;
-}
-`
+  }
+`;
 //Object.entries(객체)는 [key, value]쌍의 배열로 반환합니다.
 //배열로 반환하기 때문에 map 메서드를 사용해 순차적으로 나열할 수 있습니다.
-const CategoryList: FunctionComponent<CategoryListProps> = function({
-    selectedCategory,
-    categoryList,
-}){
-    return(
-        <CategoryListWrapper>
-            {Object.entries(categoryList).map(([name, count])=>(
-                <CategoryItem 
-                    to={`?category=${name}`}
-                    active={name === selectedCategory}
-                    key={name}
-                    >
-                    #{name}({count})
-                </CategoryItem>
-            ))}
-        </CategoryListWrapper>
-    )
-}
+const CategoryList: FunctionComponent<CategoryListProps> = function ({
+  selectedCategory,
+  categoryList,
+}) {
+  return (
+    <CategoryListWrapper>
+      {Object.entries(categoryList).map(([name, count]) => (
+        <CategoryItem
+          to={`?category=${name}`}
+          active={name === selectedCategory}
+          key={name}
+        >
+          #{name}({count})
+        </CategoryItem>
+      ))}
+    </CategoryListWrapper>
+  );
+};
 
 export default CategoryList;

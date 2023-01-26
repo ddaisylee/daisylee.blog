@@ -38,8 +38,8 @@ module.exports = {
           formats: ['auto', 'webp'],
           quality: 100,
           placeholder: 'blurred',
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -80,4 +80,4 @@ module.exports = {
       },
     },
   ],
-}
+};
