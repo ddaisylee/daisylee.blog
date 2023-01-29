@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Global, css } from '@emotion/react';
 
 const defaultStyle = css`
@@ -25,8 +25,8 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle: FunctionComponent = function () {
+function GlobalStyle() {
   return <Global styles={defaultStyle} />;
-};
+}
 
 export default GlobalStyle;

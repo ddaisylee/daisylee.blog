@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import * as S from './ProfileImage.styles';
 
@@ -6,10 +6,8 @@ type ProfileImageProps = {
   profileImage: IGatsbyImageData;
 };
 
-const ProfileImage: FunctionComponent<ProfileImageProps> = function ({
-  profileImage,
-}) {
+function ProfileImage({ profileImage }: ProfileImageProps) {
   return <S.Container image={profileImage} alt="Profile Image" />;
-};
+}
 
 export default ProfileImage;

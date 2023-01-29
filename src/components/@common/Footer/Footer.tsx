@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import * as S from './Footer.styles';
 
-const Footer: FunctionComponent = function () {
+const Footer = function () {
   return (
     <S.Container>
       Thank You for Visiting My Blog, Have a Good Day🌼❤️

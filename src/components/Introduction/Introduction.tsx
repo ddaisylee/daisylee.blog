@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import ProfileImage from 'components/ProfileImage/ProfileImage';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import * as S from './Introduction.styles';
@@ -7,9 +7,7 @@ type IntroductionProps = {
   profileImage: IGatsbyImageData;
 };
 
-const Introduction: FunctionComponent<IntroductionProps> = function ({
-  profileImage,
-}) {
+function Introduction({ profileImage }: IntroductionProps) {
   return (
     <S.Background>
       <S.Container>
@@ -21,6 +19,6 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
       </S.Container>
     </S.Background>
   );
-};
+}
 
 export default Introduction;

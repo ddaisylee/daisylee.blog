@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { PostFrontmatterType } from 'types/PostItem.types';
 import * as S from './PostItem.styles';
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
-const PostItem: FunctionComponent<PostItemProps> = function ({
+function PostItem({
   title,
   date,
   categories,
@@ -13,7 +13,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
     childImageSharp: { gatsbyImageData },
   },
   link,
-}) {
+}: PostItemProps) {
   return (
     <S.Container to={link}>
       <S.ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
@@ -29,6 +29,6 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
       </S.PostItemContent>
     </S.Container>
   );
-};
+}
 
 export default PostItem;

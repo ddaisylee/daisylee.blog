@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -15,13 +15,13 @@ type InfoPageProps = {
   };
 };
 
-const InfoPage: FunctionComponent<InfoPageProps> = function ({
+function InfoPage({
   data: {
     site: {
       siteMetadata: { title, description, author },
     },
   },
-}) {
+}: InfoPageProps) {
   return (
     <div>
       <Global styles={globalStyle} />
@@ -30,7 +30,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
       <Text2 disable={true}>{author}</Text2>
     </div>
   );
-};
+}
 
 export default InfoPage;
 
