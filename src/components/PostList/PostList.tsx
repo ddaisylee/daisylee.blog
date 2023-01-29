@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import PostItem from '../PostItem/PostItem';
 import { PostListItemType } from 'types/PostItem.types';
 import * as S from './PostList.styles';
@@ -22,7 +22,7 @@ type PostListProps = {
   posts: PostListItemType[];
 };
 
-const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
+function PostList({ posts }: PostListProps) {
   return (
     <S.Container>
       {posts.map(({ node: { id, frontmatter } }: PostListItemType) => (
@@ -30,6 +30,6 @@ const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
       ))}
     </S.Container>
   );
-};
+}
 
 export default PostList;

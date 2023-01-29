@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styled from '@emotion/styled';
 import GlobalStyle from 'styles/GlobalStyle';
 import { Introduction, CategoryList, PostList } from 'components/index';
@@ -38,7 +38,7 @@ type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
+function IndexPage({
   location: { search },
   data: {
     allMarkdownRemark: { edges },
@@ -46,7 +46,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       childImageSharp: { gatsbyImageData },
     },
   },
-}) {
+}: IndexPageProps) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
@@ -86,7 +86,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       <Footer />
     </Container>
   );
-};
+}
 
 export default IndexPage;
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import * as S from './CategoryList.styles';
@@ -38,10 +38,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 `;
 
-const CategoryList: FunctionComponent<CategoryListProps> = function ({
-  selectedCategory,
-  categoryList,
-}) {
+function CategoryList({ selectedCategory, categoryList }: CategoryListProps) {
   return (
     <S.Container>
       {Object.entries(categoryList).map(([name, count]) => (
@@ -55,6 +52,6 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
       ))}
     </S.Container>
   );
-};
+}
 
 export default CategoryList;
