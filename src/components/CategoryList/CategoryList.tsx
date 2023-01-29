@@ -1,6 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import * as S from './CategoryList.styles';
 
 /*
 받아올 데이터 리스트
@@ -79,7 +80,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
   categoryList,
 }) {
   return (
-    <CategoryListWrapper>
+    <S.Container>
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryItem
           to={`?category=${name}`}
@@ -89,7 +90,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           #{name}({count})
         </CategoryItem>
       ))}
-    </CategoryListWrapper>
+    </S.Container>
   );
 };
 

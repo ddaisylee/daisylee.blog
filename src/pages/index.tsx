@@ -2,17 +2,22 @@
 //FunctionComponent: 리액트에서 제공하는 함수형 컴포넌트를 위한 타입
 import React, { FunctionComponent, useMemo } from 'react';
 import styled from '@emotion/styled';
-import GlobalStyle from 'components/Common/GlobalStyle';
-import Introduction from 'components/Main/Introduction';
-import Footer from 'components/Common/Footer';
-import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
+import GlobalStyle from 'styles/GlobalStyle';
+import { Introduction, CategoryList, PostList } from 'components/index';
+import { Footer } from 'components/@common/index';
+import { CategoryListProps } from 'components/CategoryList/CategoryList';
 //PostList 컴포넌트로 옮긴 데이터를 불러옵니다.
-import PostList from 'components/Main/PostList';
 import { graphql } from 'gatsby';
 import { PostListItemType } from 'types/PostItem.types';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import queryString, { ParsedQuery } from 'query-string';
-import { PostType } from 'components/Main/PostList';
+import { PostType } from 'components/PostList/PostList';
+
+const CATEGORY_LIST = {
+  All: 5,
+  Mobile: 3,
+  Web: 2,
+};
 
 const Container = styled.div`
   display: flex;
@@ -80,10 +85,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     <Container>
       <GlobalStyle />
       <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
+      <CategoryList selectedCategory="Web" categoryList={CATEGORY_LIST} />
       <PostList posts={edges} />
       <Footer />
     </Container>
