@@ -16,7 +16,6 @@ export const Container = styled(Link)`
   }
 `;
 
-//추가 학습이 필요한 CSS 속성 또는 속성값: object-fit
 export const ThumbnailImage = styled(GatsbyImage)`
   width: 100%;
   height: 200px;
@@ -31,9 +30,6 @@ export const PostItemContent = styled.div`
   padding: 15px;
 `;
 
-//추가 학습이 필요한 CSS 속성 또는 속성값: -webkit-box, text-overflow,
-//white-space, overflow-wrap, -webkit-line-clamp,
-//-webkit-box-orient
 export const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;

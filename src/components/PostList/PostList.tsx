@@ -18,9 +18,7 @@ export type PostType = {
   };
 };
 
-//props의 타입 지정
 type PostListProps = {
-  //PostItem 컴포넌트에 props로 넘겨줄 배열
   posts: PostListItemType[];
 };
 

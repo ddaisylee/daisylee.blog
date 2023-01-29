@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { PostFrontmatterType } from 'types/PostItem.types';
 import * as S from './PostItem.styles';
 
-//PostItem이 받아오는 props: 제목, 날짜, 카테고리, 요약, 썸네일, 링크
 type PostItemProps = PostFrontmatterType & { link: string };
 
 const PostItem: FunctionComponent<PostItemProps> = function ({

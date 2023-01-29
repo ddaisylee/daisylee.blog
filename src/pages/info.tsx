@@ -63,10 +63,6 @@ const globalStyle = css`
   }
 `;
 
-//Styled Component를 생성한 방식에서 props를 받아 처리하는 방법: disable이라는 prop으로 실습했습니다.
-
-//2. Styled Component를 만들어서 컴포넌트처럼 사용하는 방법
-//TypeScript에서는 props의 타입을 지정해줍니다.
 const Text1 = styled.div<{ disable: boolean }>`
   font-size: 20px;
   font-weight: 700;
@@ -74,8 +70,6 @@ const Text1 = styled.div<{ disable: boolean }>`
   text-decoration: ${({ disable }) => (disable ? 'line-through' : 'none')};
 `;
 
-//3. 스타일을 객체에 담아 사용하는 방법
-//TypeScript에서는 props의 타입을 지정해줍니다.
 const Text2 = styled('div')<{ disable: boolean }>(({ disable }) => ({
   fontSize: '15px',
   color: 'tomato',
