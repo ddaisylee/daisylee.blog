@@ -3,21 +3,6 @@ import PostItem from '../PostItem/PostItem';
 import { PostListItemType } from 'types/PostItem.types';
 import * as S from './PostList.styles';
 
-export type PostType = {
-  node: {
-    id: string;
-    frontmatter: {
-      title: string;
-      summary: string;
-      date: string;
-      categories: string[];
-      thumbnail: {
-        publicURL: string;
-      };
-    };
-  };
-};
-
 type PostListProps = {
   posts: PostListItemType[];
 };
@@ -25,9 +10,17 @@ type PostListProps = {
 function PostList({ posts }: PostListProps) {
   return (
     <S.Container>
-      {posts.map(({ node: { id, frontmatter } }: PostListItemType) => (
-        <PostItem {...frontmatter} link="https://www.google.co.kr" key={id} />
-      ))}
+      {posts.map(
+        ({
+          node: {
+            id,
+            fields: { slug },
+            frontmatter,
+          },
+        }: PostListItemType) => (
+          <PostItem {...frontmatter} link={slug} key={id} />
+        ),
+      )}
     </S.Container>
   );
 }

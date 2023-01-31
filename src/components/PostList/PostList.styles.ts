@@ -7,7 +7,6 @@ export const Container = styled.div`
   width: 768px;
   margin: 0 auto;
   padding: 50px 0;
-  background-color: tomato;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
