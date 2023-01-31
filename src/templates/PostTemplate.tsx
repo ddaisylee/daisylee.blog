@@ -5,6 +5,7 @@ import PostHead from 'components/PostHead/PostHead';
 import { PostPageItemType } from 'types/PostItem.types';
 import { FunctionComponent } from 'react';
 import PostContent from 'components/PostContent/PostContent';
+import CommentWidget from 'components/CommentWidget/CommentWidget';
 
 type PostTemplateProps = {
   data: {
@@ -42,6 +43,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         thumbnail={gatsbyImageData}
       />
       <PostContent html={html} />
+      <CommentWidget />
     </BaseTemplate>
   );
 };
