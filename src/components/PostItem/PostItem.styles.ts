@@ -66,7 +66,6 @@ export const CategoryItem = styled.div`
   color: white;
 `;
 
-//추가 학습이 필요한 CSS 속성 또는 속성값: Title 컴포넌트와 동일
 export const Summary = styled.div`
   display: -webkit-box;
   overflow: hidden;
