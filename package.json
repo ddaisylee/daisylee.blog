@@ -11,6 +11,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/react-helmet": "^6.1.6",
+    "@vercel/gatsby-plugin-vercel-builder": "^1.0.3",
     "gatsby": "^4.14.0",
     "gatsby-plugin-canonical-urls": "^5.5.0",
     "gatsby-plugin-emotion": "^7.14.0",
