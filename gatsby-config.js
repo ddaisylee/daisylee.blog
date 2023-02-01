@@ -4,6 +4,7 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    stripQueryString: true,
   },
   plugins: [
     {
@@ -74,6 +75,13 @@ module.exports = {
             options: {
               target: '_blank',
               rel: 'nofollow',
+            },
+          },
+          'gatsby-plugin-sitemap',
+          {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+              policy: [{ userAgent: '*', allow: '/' }],
             },
           },
         ],
