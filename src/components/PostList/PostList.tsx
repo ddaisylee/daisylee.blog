@@ -7,7 +7,7 @@ type PostListProps = {
   posts: PostListItemType[];
 };
 
-function PostList({ posts }: PostListProps) {
+export default function PostList({ posts }: PostListProps) {
   return (
     <S.Container>
       {posts.map(
@@ -24,5 +24,3 @@ function PostList({ posts }: PostListProps) {
     </S.Container>
   );
 }
-
-export default PostList;

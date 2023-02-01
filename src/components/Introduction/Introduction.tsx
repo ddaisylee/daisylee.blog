@@ -7,7 +7,7 @@ type IntroductionProps = {
   profileImage: IGatsbyImageData;
 };
 
-function Introduction({ profileImage }: IntroductionProps) {
+export default function Introduction({ profileImage }: IntroductionProps) {
   return (
     <S.Background>
       <S.Container>
@@ -20,5 +20,3 @@ function Introduction({ profileImage }: IntroductionProps) {
     </S.Background>
   );
 }
-
-export default Introduction;

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 interface PostContentProps {
@@ -129,8 +129,6 @@ const MarkdownRenderer = styled.div`
   }
 `;
 
-const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
+export default function PostContent({ html }: PostContentProps) {
   return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
-};
-
-export default PostContent;
+}
