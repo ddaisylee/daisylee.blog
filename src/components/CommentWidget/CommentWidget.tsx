@@ -1,5 +1,5 @@
 import React, { createRef, useEffect } from 'react';
-import styled from '@emotion/styled';
+import * as S from './CommentWidget.styles';
 
 const src = 'https://utteranc.es/client.js';
 const repo = 'ddaisylee/ddaisylee.github.io';
@@ -13,12 +13,6 @@ type UtterancesAttributesType = {
   crossorigin: string;
   async: string;
 };
-
-const UtterancesWrapper = styled.div`
-  @media (max-width: 768px) {
-    padding: 0 20px;
-  }
-`;
 
 export default function CommentWidget() {
   const element = createRef<HTMLDivElement>();
@@ -45,5 +39,5 @@ export default function CommentWidget() {
     element.current.appendChild(utterances);
   }, []);
 
-  return <UtterancesWrapper ref={element} />;
+  return <S.UtterancesWrapper ref={element} />;
 }
