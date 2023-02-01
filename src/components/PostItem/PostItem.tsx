@@ -4,7 +4,7 @@ import * as S from './PostItem.styles';
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
-function PostItem({
+export default function PostItem({
   title,
   date,
   categories,
@@ -30,5 +30,3 @@ function PostItem({
     </S.Container>
   );
 }
-
-export default PostItem;

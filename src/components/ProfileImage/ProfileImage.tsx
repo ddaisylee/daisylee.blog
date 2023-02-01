@@ -6,8 +6,6 @@ type ProfileImageProps = {
   profileImage: IGatsbyImageData;
 };
 
-function ProfileImage({ profileImage }: ProfileImageProps) {
+export default function ProfileImage({ profileImage }: ProfileImageProps) {
   return <S.Container image={profileImage} alt="Profile Image" />;
 }
-
-export default ProfileImage;
