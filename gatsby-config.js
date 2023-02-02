@@ -3,7 +3,7 @@ module.exports = {
     title: 'Daisylee Blog',
     description: '주니어 프론트엔드 개발자 Daisy의 기술 블로그입니다.',
     author: `@ddaisylee`,
-    siteUrl: `https://example`,
+    siteUrl: `https://ddaisylee.github.io`,
     stripQueryString: true
   },
   plugins: [
@@ -83,7 +83,7 @@ module.exports = {
           {
             resolve: 'gatsby-plugin-canonical-urls',
             options: {
-              siteUrl: 'https://daisylee-blog.vercel.app/',
+              siteUrl: 'https://daisylee.github.io/',
               stripQueryString: true,
             },
           }
