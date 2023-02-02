@@ -31,15 +31,11 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: `gatsby-transformer-sharp`,
       options: {
-        defaults: {
-          formats: ['auto', 'webp'],
-          quality: 100,
-          placeholder: 'blurred',
-        },
+        checkSupportedExtensions: false,
       },
     },
     {
