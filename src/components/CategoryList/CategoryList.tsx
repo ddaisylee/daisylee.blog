@@ -1,17 +1,6 @@
-import React, { ReactNode } from 'react';
-import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import React from 'react';
 import * as S from './CategoryList.styles';
-
-type CategoryItemProps = {
-  active: boolean;
-};
-
-type GatsbyLinkProps = {
-  children: ReactNode;
-  className?: string;
-  to: string;
-} & CategoryItemProps;
+import CategoryItem from 'components/CategoryItem/CategoryItem';
 
 export type CategoryListProps = {
   selectedCategory: string;
@@ -19,24 +8,6 @@ export type CategoryListProps = {
     [key: string]: number;
   };
 };
-
-const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
-  <Link {...props} />
-))<CategoryItemProps>`
-  margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
-  cursor: pointer;
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-`;
 
 function CategoryList({ selectedCategory, categoryList }: CategoryListProps) {
   return (

@@ -1,3 +1,4 @@
+export { default as CategoryItem } from './CategoryItem/CategoryItem';
 export { default as CategoryList } from './CategoryList/CategoryList';
 export { default as CommentWidget } from './CommentWidget/CommentWidget';
 export { default as Introduction } from './Introduction/Introduction';
