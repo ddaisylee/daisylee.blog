@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import * as S from './CategoryList.styles';
+import { CategoryListProps } from 'types/Category.types';
 
 type CategoryItemProps = {
   active: boolean;
@@ -12,13 +13,6 @@ type GatsbyLinkProps = {
   className?: string;
   to: string;
 } & CategoryItemProps;
-
-export type CategoryListProps = {
-  selectedCategory: string;
-  categoryList: {
-    [key: string]: number;
-  };
-};
 
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />

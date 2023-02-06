@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { PostHeadInfoProps } from 'components/PostHeadInfo/PostHeadInfo';
+import { PostHeadInfoProps } from 'types/PostHeadInfo.types';
 import { PostHeadInfo } from 'components';
 import * as S from './PostHead.styles';
 

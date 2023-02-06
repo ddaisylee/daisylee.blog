@@ -2,12 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import * as S from './PostHeadInfo.styles';
-
-export type PostHeadInfoProps = {
-  title: string;
-  date: string;
-  categories: string[];
-};
+import { PostHeadInfoProps } from 'types/PostHeadInfo.types';
 
 export default function PostHeadInfo({
   title,
