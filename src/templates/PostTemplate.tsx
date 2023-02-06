@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { PostHead, PostContent, CommentWidget } from 'components';
 import BaseTemplate from './BaseTemplate';
-import PostHead from 'components/PostHead/PostHead';
 import { PostPageItemType } from 'types/PostItem.types';
 import { FunctionComponent } from 'react';
-import PostContent from 'components/PostContent/PostContent';
-import CommentWidget from 'components/CommentWidget/CommentWidget';
 
 type PostTemplateProps = {
   data: {

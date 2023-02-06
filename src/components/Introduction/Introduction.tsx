@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileImage from 'components/ProfileImage/ProfileImage';
+import { ProfileImage } from 'components';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import * as S from './Introduction.styles';
 

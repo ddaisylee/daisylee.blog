@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import PostItem from '../PostItem/PostItem';
+import { PostItem } from 'components';
 import { PostListItemType } from 'types/PostItem.types';
 import * as S from './PostList.styles';
 
