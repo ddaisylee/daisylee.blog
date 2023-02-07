@@ -7,7 +7,7 @@ https://daisylee-blog.vercel.app/
 ## 설치 및 실행
 
 ```shell
-git clone https://github.com/ddaisylee/ddaisylee.github.io.git
+git clone https://github.com/ddaisylee/daisylee.blog.git
 ```
 
 ```shell

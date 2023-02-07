@@ -2,7 +2,7 @@ import React, { createRef, useEffect } from 'react';
 import * as S from './CommentWidget.styles';
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'ddaisylee/ddaisylee.github.io';
+const repo = 'ddaisylee/daisylee.blog';
 
 type UtterancesAttributesType = {
   src: string;
